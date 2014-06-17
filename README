@@ -1,0 +1,1 @@
+Use "mvn generate-sources" in order to generate POJO from avro schema.  
