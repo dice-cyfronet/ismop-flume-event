@@ -3,8 +3,7 @@ package pl.cyfronet.ismop.flume.events;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.HashMap;
+import java.util.Date;
 
 import org.apache.avro.io.DecoderFactory;
 import org.apache.avro.io.EncoderFactory;
@@ -21,12 +20,11 @@ public class MomEncoderDecoder {
 
 		Builder newBuilder = MomEvent.newBuilder();
 
-		ByteBuffer bb = ByteBuffer.wrap("my_payload".getBytes());
-		HashMap<CharSequence, CharSequence> metadata = new HashMap<CharSequence, CharSequence>();
-		metadata.put("id", "123");
-
-		newBuilder.setPayload(bb);
-		newBuilder.setMetadata(metadata);
+		newBuilder.setValue(123);
+		newBuilder.setTimestamp(new Date().getTime());
+		newBuilder.setSensorId("12321");
+		newBuilder.setMonitoringStationId("12321");
+		newBuilder.setMomTopicName("topicName");
 
 		MomEvent event = newBuilder.build();
 

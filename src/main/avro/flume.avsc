@@ -4,15 +4,25 @@
 	"namespace":"pl.cyfronet.ismop.flume.events",
 	"fields":[
 		{
-			"name":"metadata",
-			"type":{
-				"type":"map",
-				"values":"string"
-			}
-		},
+			"name":"sensorId",
+			"type":"string"
+		}, 
 		{
-			"name":"payload",
-			"type":"bytes"
+			"name":"monitoringStationId",
+			"type":"string"
+		}, 
+		{
+			"name":"value",
+			"type":"float"
+		}, 
+		{
+			"name":"timestamp",
+			"type":"long"
+		}, 
+		{
+			"name":"momTopicName",
+			"type":"string"
 		}
+		
 	]
 }

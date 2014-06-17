@@ -7,10 +7,13 @@ package pl.cyfronet.ismop.flume.events;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MomEvent\",\"namespace\":\"pl.cyfronet.ismop.flume.events\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"payload\",\"type\":\"bytes\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MomEvent\",\"namespace\":\"pl.cyfronet.ismop.flume.events\",\"fields\":[{\"name\":\"sensorId\",\"type\":\"string\"},{\"name\":\"monitoringStationId\",\"type\":\"string\"},{\"name\":\"value\",\"type\":\"float\"},{\"name\":\"timestamp\",\"type\":\"long\"},{\"name\":\"momTopicName\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata;
-  @Deprecated public java.nio.ByteBuffer payload;
+  @Deprecated public java.lang.CharSequence sensorId;
+  @Deprecated public java.lang.CharSequence monitoringStationId;
+  @Deprecated public float value;
+  @Deprecated public long timestamp;
+  @Deprecated public java.lang.CharSequence momTopicName;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -22,17 +25,23 @@ public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * All-args constructor.
    */
-  public MomEvent(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata, java.nio.ByteBuffer payload) {
-    this.metadata = metadata;
-    this.payload = payload;
+  public MomEvent(java.lang.CharSequence sensorId, java.lang.CharSequence monitoringStationId, java.lang.Float value, java.lang.Long timestamp, java.lang.CharSequence momTopicName) {
+    this.sensorId = sensorId;
+    this.monitoringStationId = monitoringStationId;
+    this.value = value;
+    this.timestamp = timestamp;
+    this.momTopicName = momTopicName;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return metadata;
-    case 1: return payload;
+    case 0: return sensorId;
+    case 1: return monitoringStationId;
+    case 2: return value;
+    case 3: return timestamp;
+    case 4: return momTopicName;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -40,40 +49,88 @@ public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implem
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: metadata = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
-    case 1: payload = (java.nio.ByteBuffer)value$; break;
+    case 0: sensorId = (java.lang.CharSequence)value$; break;
+    case 1: monitoringStationId = (java.lang.CharSequence)value$; break;
+    case 2: value = (java.lang.Float)value$; break;
+    case 3: timestamp = (java.lang.Long)value$; break;
+    case 4: momTopicName = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'metadata' field.
+   * Gets the value of the 'sensorId' field.
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getMetadata() {
-    return metadata;
+  public java.lang.CharSequence getSensorId() {
+    return sensorId;
   }
 
   /**
-   * Sets the value of the 'metadata' field.
+   * Sets the value of the 'sensorId' field.
    * @param value the value to set.
    */
-  public void setMetadata(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
-    this.metadata = value;
+  public void setSensorId(java.lang.CharSequence value) {
+    this.sensorId = value;
   }
 
   /**
-   * Gets the value of the 'payload' field.
+   * Gets the value of the 'monitoringStationId' field.
    */
-  public java.nio.ByteBuffer getPayload() {
-    return payload;
+  public java.lang.CharSequence getMonitoringStationId() {
+    return monitoringStationId;
   }
 
   /**
-   * Sets the value of the 'payload' field.
+   * Sets the value of the 'monitoringStationId' field.
    * @param value the value to set.
    */
-  public void setPayload(java.nio.ByteBuffer value) {
-    this.payload = value;
+  public void setMonitoringStationId(java.lang.CharSequence value) {
+    this.monitoringStationId = value;
+  }
+
+  /**
+   * Gets the value of the 'value' field.
+   */
+  public java.lang.Float getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the 'value' field.
+   * @param value the value to set.
+   */
+  public void setValue(java.lang.Float value) {
+    this.value = value;
+  }
+
+  /**
+   * Gets the value of the 'timestamp' field.
+   */
+  public java.lang.Long getTimestamp() {
+    return timestamp;
+  }
+
+  /**
+   * Sets the value of the 'timestamp' field.
+   * @param value the value to set.
+   */
+  public void setTimestamp(java.lang.Long value) {
+    this.timestamp = value;
+  }
+
+  /**
+   * Gets the value of the 'momTopicName' field.
+   */
+  public java.lang.CharSequence getMomTopicName() {
+    return momTopicName;
+  }
+
+  /**
+   * Sets the value of the 'momTopicName' field.
+   * @param value the value to set.
+   */
+  public void setMomTopicName(java.lang.CharSequence value) {
+    this.momTopicName = value;
   }
 
   /** Creates a new MomEvent RecordBuilder */
@@ -97,8 +154,11 @@ public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implem
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<MomEvent>
     implements org.apache.avro.data.RecordBuilder<MomEvent> {
 
-    private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata;
-    private java.nio.ByteBuffer payload;
+    private java.lang.CharSequence sensorId;
+    private java.lang.CharSequence monitoringStationId;
+    private float value;
+    private long timestamp;
+    private java.lang.CharSequence momTopicName;
 
     /** Creates a new Builder */
     private Builder() {
@@ -108,76 +168,173 @@ public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implem
     /** Creates a Builder by copying an existing Builder */
     private Builder(pl.cyfronet.ismop.flume.events.MomEvent.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.metadata)) {
-        this.metadata = data().deepCopy(fields()[0].schema(), other.metadata);
+      if (isValidValue(fields()[0], other.sensorId)) {
+        this.sensorId = data().deepCopy(fields()[0].schema(), other.sensorId);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.payload)) {
-        this.payload = data().deepCopy(fields()[1].schema(), other.payload);
+      if (isValidValue(fields()[1], other.monitoringStationId)) {
+        this.monitoringStationId = data().deepCopy(fields()[1].schema(), other.monitoringStationId);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.value)) {
+        this.value = data().deepCopy(fields()[2].schema(), other.value);
+        fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.timestamp)) {
+        this.timestamp = data().deepCopy(fields()[3].schema(), other.timestamp);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.momTopicName)) {
+        this.momTopicName = data().deepCopy(fields()[4].schema(), other.momTopicName);
+        fieldSetFlags()[4] = true;
       }
     }
     
     /** Creates a Builder by copying an existing MomEvent instance */
     private Builder(pl.cyfronet.ismop.flume.events.MomEvent other) {
             super(pl.cyfronet.ismop.flume.events.MomEvent.SCHEMA$);
-      if (isValidValue(fields()[0], other.metadata)) {
-        this.metadata = data().deepCopy(fields()[0].schema(), other.metadata);
+      if (isValidValue(fields()[0], other.sensorId)) {
+        this.sensorId = data().deepCopy(fields()[0].schema(), other.sensorId);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.payload)) {
-        this.payload = data().deepCopy(fields()[1].schema(), other.payload);
+      if (isValidValue(fields()[1], other.monitoringStationId)) {
+        this.monitoringStationId = data().deepCopy(fields()[1].schema(), other.monitoringStationId);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.value)) {
+        this.value = data().deepCopy(fields()[2].schema(), other.value);
+        fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.timestamp)) {
+        this.timestamp = data().deepCopy(fields()[3].schema(), other.timestamp);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.momTopicName)) {
+        this.momTopicName = data().deepCopy(fields()[4].schema(), other.momTopicName);
+        fieldSetFlags()[4] = true;
       }
     }
 
-    /** Gets the value of the 'metadata' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getMetadata() {
-      return metadata;
+    /** Gets the value of the 'sensorId' field */
+    public java.lang.CharSequence getSensorId() {
+      return sensorId;
     }
     
-    /** Sets the value of the 'metadata' field */
-    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setMetadata(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
+    /** Sets the value of the 'sensorId' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setSensorId(java.lang.CharSequence value) {
       validate(fields()[0], value);
-      this.metadata = value;
+      this.sensorId = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'metadata' field has been set */
-    public boolean hasMetadata() {
+    /** Checks whether the 'sensorId' field has been set */
+    public boolean hasSensorId() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'metadata' field */
-    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearMetadata() {
-      metadata = null;
+    /** Clears the value of the 'sensorId' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearSensorId() {
+      sensorId = null;
       fieldSetFlags()[0] = false;
       return this;
     }
 
-    /** Gets the value of the 'payload' field */
-    public java.nio.ByteBuffer getPayload() {
-      return payload;
+    /** Gets the value of the 'monitoringStationId' field */
+    public java.lang.CharSequence getMonitoringStationId() {
+      return monitoringStationId;
     }
     
-    /** Sets the value of the 'payload' field */
-    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setPayload(java.nio.ByteBuffer value) {
+    /** Sets the value of the 'monitoringStationId' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setMonitoringStationId(java.lang.CharSequence value) {
       validate(fields()[1], value);
-      this.payload = value;
+      this.monitoringStationId = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'payload' field has been set */
-    public boolean hasPayload() {
+    /** Checks whether the 'monitoringStationId' field has been set */
+    public boolean hasMonitoringStationId() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'payload' field */
-    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearPayload() {
-      payload = null;
+    /** Clears the value of the 'monitoringStationId' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearMonitoringStationId() {
+      monitoringStationId = null;
       fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'value' field */
+    public java.lang.Float getValue() {
+      return value;
+    }
+    
+    /** Sets the value of the 'value' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setValue(float value) {
+      validate(fields()[2], value);
+      this.value = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'value' field has been set */
+    public boolean hasValue() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'value' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearValue() {
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'timestamp' field */
+    public java.lang.Long getTimestamp() {
+      return timestamp;
+    }
+    
+    /** Sets the value of the 'timestamp' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setTimestamp(long value) {
+      validate(fields()[3], value);
+      this.timestamp = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'timestamp' field has been set */
+    public boolean hasTimestamp() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'timestamp' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearTimestamp() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'momTopicName' field */
+    public java.lang.CharSequence getMomTopicName() {
+      return momTopicName;
+    }
+    
+    /** Sets the value of the 'momTopicName' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setMomTopicName(java.lang.CharSequence value) {
+      validate(fields()[4], value);
+      this.momTopicName = value;
+      fieldSetFlags()[4] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'momTopicName' field has been set */
+    public boolean hasMomTopicName() {
+      return fieldSetFlags()[4];
+    }
+    
+    /** Clears the value of the 'momTopicName' field */
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearMomTopicName() {
+      momTopicName = null;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -185,8 +342,11 @@ public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implem
     public MomEvent build() {
       try {
         MomEvent record = new MomEvent();
-        record.metadata = fieldSetFlags()[0] ? this.metadata : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[0]);
-        record.payload = fieldSetFlags()[1] ? this.payload : (java.nio.ByteBuffer) defaultValue(fields()[1]);
+        record.sensorId = fieldSetFlags()[0] ? this.sensorId : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.monitoringStationId = fieldSetFlags()[1] ? this.monitoringStationId : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.value = fieldSetFlags()[2] ? this.value : (java.lang.Float) defaultValue(fields()[2]);
+        record.timestamp = fieldSetFlags()[3] ? this.timestamp : (java.lang.Long) defaultValue(fields()[3]);
+        record.momTopicName = fieldSetFlags()[4] ? this.momTopicName : (java.lang.CharSequence) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
