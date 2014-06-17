@@ -1,6 +1,6 @@
 {
 	"type":"record",
-	"name":"MeasurmentEvent",
+	"name":"MomEvent",
 	"namespace":"pl.cyfronet.ismop.flume.events",
 	"fields":[
 		{

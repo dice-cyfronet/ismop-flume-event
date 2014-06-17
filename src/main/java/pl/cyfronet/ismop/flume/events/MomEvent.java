@@ -6,8 +6,8 @@
 package pl.cyfronet.ismop.flume.events;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MeasurmentEvent\",\"namespace\":\"pl.cyfronet.ismop.flume.events\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"payload\",\"type\":\"bytes\"}]}");
+public class MomEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MomEvent\",\"namespace\":\"pl.cyfronet.ismop.flume.events\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"payload\",\"type\":\"bytes\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata;
   @Deprecated public java.nio.ByteBuffer payload;
@@ -17,12 +17,12 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
    * to their default values from the schema.  If that is desired then
    * one should use {@link \#newBuilder()}. 
    */
-  public MeasurmentEvent() {}
+  public MomEvent() {}
 
   /**
    * All-args constructor.
    */
-  public MeasurmentEvent(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata, java.nio.ByteBuffer payload) {
+  public MomEvent(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata, java.nio.ByteBuffer payload) {
     this.metadata = metadata;
     this.payload = payload;
   }
@@ -76,37 +76,37 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
     this.payload = value;
   }
 
-  /** Creates a new MeasurmentEvent RecordBuilder */
-  public static pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder newBuilder() {
-    return new pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder();
+  /** Creates a new MomEvent RecordBuilder */
+  public static pl.cyfronet.ismop.flume.events.MomEvent.Builder newBuilder() {
+    return new pl.cyfronet.ismop.flume.events.MomEvent.Builder();
   }
   
-  /** Creates a new MeasurmentEvent RecordBuilder by copying an existing Builder */
-  public static pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder newBuilder(pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder other) {
-    return new pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder(other);
+  /** Creates a new MomEvent RecordBuilder by copying an existing Builder */
+  public static pl.cyfronet.ismop.flume.events.MomEvent.Builder newBuilder(pl.cyfronet.ismop.flume.events.MomEvent.Builder other) {
+    return new pl.cyfronet.ismop.flume.events.MomEvent.Builder(other);
   }
   
-  /** Creates a new MeasurmentEvent RecordBuilder by copying an existing MeasurmentEvent instance */
-  public static pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder newBuilder(pl.cyfronet.ismop.flume.events.MeasurmentEvent other) {
-    return new pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder(other);
+  /** Creates a new MomEvent RecordBuilder by copying an existing MomEvent instance */
+  public static pl.cyfronet.ismop.flume.events.MomEvent.Builder newBuilder(pl.cyfronet.ismop.flume.events.MomEvent other) {
+    return new pl.cyfronet.ismop.flume.events.MomEvent.Builder(other);
   }
   
   /**
-   * RecordBuilder for MeasurmentEvent instances.
+   * RecordBuilder for MomEvent instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<MeasurmentEvent>
-    implements org.apache.avro.data.RecordBuilder<MeasurmentEvent> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<MomEvent>
+    implements org.apache.avro.data.RecordBuilder<MomEvent> {
 
     private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> metadata;
     private java.nio.ByteBuffer payload;
 
     /** Creates a new Builder */
     private Builder() {
-      super(pl.cyfronet.ismop.flume.events.MeasurmentEvent.SCHEMA$);
+      super(pl.cyfronet.ismop.flume.events.MomEvent.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder other) {
+    private Builder(pl.cyfronet.ismop.flume.events.MomEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.metadata)) {
         this.metadata = data().deepCopy(fields()[0].schema(), other.metadata);
@@ -118,9 +118,9 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
       }
     }
     
-    /** Creates a Builder by copying an existing MeasurmentEvent instance */
-    private Builder(pl.cyfronet.ismop.flume.events.MeasurmentEvent other) {
-            super(pl.cyfronet.ismop.flume.events.MeasurmentEvent.SCHEMA$);
+    /** Creates a Builder by copying an existing MomEvent instance */
+    private Builder(pl.cyfronet.ismop.flume.events.MomEvent other) {
+            super(pl.cyfronet.ismop.flume.events.MomEvent.SCHEMA$);
       if (isValidValue(fields()[0], other.metadata)) {
         this.metadata = data().deepCopy(fields()[0].schema(), other.metadata);
         fieldSetFlags()[0] = true;
@@ -137,7 +137,7 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
     }
     
     /** Sets the value of the 'metadata' field */
-    public pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder setMetadata(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setMetadata(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
       validate(fields()[0], value);
       this.metadata = value;
       fieldSetFlags()[0] = true;
@@ -150,7 +150,7 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
     }
     
     /** Clears the value of the 'metadata' field */
-    public pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder clearMetadata() {
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearMetadata() {
       metadata = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -162,7 +162,7 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
     }
     
     /** Sets the value of the 'payload' field */
-    public pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder setPayload(java.nio.ByteBuffer value) {
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder setPayload(java.nio.ByteBuffer value) {
       validate(fields()[1], value);
       this.payload = value;
       fieldSetFlags()[1] = true;
@@ -175,16 +175,16 @@ public class MeasurmentEvent extends org.apache.avro.specific.SpecificRecordBase
     }
     
     /** Clears the value of the 'payload' field */
-    public pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder clearPayload() {
+    public pl.cyfronet.ismop.flume.events.MomEvent.Builder clearPayload() {
       payload = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
     @Override
-    public MeasurmentEvent build() {
+    public MomEvent build() {
       try {
-        MeasurmentEvent record = new MeasurmentEvent();
+        MomEvent record = new MomEvent();
         record.metadata = fieldSetFlags()[0] ? this.metadata : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[0]);
         record.payload = fieldSetFlags()[1] ? this.payload : (java.nio.ByteBuffer) defaultValue(fields()[1]);
         return record;
