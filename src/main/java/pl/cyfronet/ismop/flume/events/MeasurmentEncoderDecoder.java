@@ -16,47 +16,54 @@ import org.apache.avro.specific.SpecificDatumWriter;
 import pl.cyfronet.ismop.flume.events.MeasurmentEvent;
 import pl.cyfronet.ismop.flume.events.MeasurmentEvent.Builder;
 
-public class MeasurmentEventTest {
+public class MeasurmentEncoderDecoder {
 
 	public static void main(String[] args) throws IOException {
-		
-		byte[] byteArray = write();
-		
-		read(byteArray);
-	
-	}
 
-	private static void read(byte[] byteArray) throws IOException {
-		ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray);
-		
-		JsonDecoder jsonDecoder = new DecoderFactory().jsonDecoder(MeasurmentEvent.getClassSchema(), inputStream);
-		
-		SpecificDatumReader<MeasurmentEvent> datumReader = new SpecificDatumReader<MeasurmentEvent>(MeasurmentEvent.class);
-		
-		MeasurmentEvent reuse = new MeasurmentEvent();
-		
-		datumReader.read(reuse, jsonDecoder);
-		
-		System.out.println(reuse);
-	}
-
-	private static byte[] write() throws IOException {
 		Builder newBuilder = MeasurmentEvent.newBuilder();
-		
+
 		ByteBuffer bb = ByteBuffer.wrap("my_payload".getBytes());
 		HashMap<CharSequence, CharSequence> metadata = new HashMap<CharSequence, CharSequence>();
 		metadata.put("id", "123");
-		
+
 		newBuilder.setPayload(bb);
 		newBuilder.setMetadata(metadata);
-		
+
 		MeasurmentEvent event = newBuilder.build();
+
+		byte[] byteArray = encode(event);
+
+		MeasurmentEvent decoded = decode(byteArray);
+
+		System.out.println(decoded);
+	}
+
+	private static MeasurmentEvent decode(byte[] byteArray) throws IOException {
 		
+		ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray);
+
+		JsonDecoder jsonDecoder = new DecoderFactory().jsonDecoder(
+				MeasurmentEvent.getClassSchema(), inputStream);
+
+		SpecificDatumReader<MeasurmentEvent> datumReader = new SpecificDatumReader<MeasurmentEvent>(
+				MeasurmentEvent.class);
+
+		MeasurmentEvent reuse = new MeasurmentEvent();
+		datumReader.read(reuse, jsonDecoder);
+
+		return reuse;
+	}
+
+	private static byte[] encode(MeasurmentEvent event) throws IOException {
+
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+		JsonEncoder jsonEncoder = new EncoderFactory().jsonEncoder(
+				MeasurmentEvent.getClassSchema(), stream);
+
+		SpecificDatumWriter<MeasurmentEvent> datumWriter = new SpecificDatumWriter<MeasurmentEvent>(
+				MeasurmentEvent.class);
 		
-		JsonEncoder jsonEncoder = new EncoderFactory().jsonEncoder(MeasurmentEvent.getClassSchema(), stream);
-		
-		SpecificDatumWriter<MeasurmentEvent> datumWriter = new SpecificDatumWriter<MeasurmentEvent>(MeasurmentEvent.class);
 		datumWriter.write(event, jsonEncoder);
 		jsonEncoder.flush();
 
