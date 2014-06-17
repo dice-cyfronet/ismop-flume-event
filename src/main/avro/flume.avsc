@@ -1,0 +1,18 @@
+{
+	"type":"record",
+	"name":"MeasurmentEvent",
+	"namespace":"pl.cyfronet.ismop.flume.events",
+	"fields":[
+		{
+			"name":"metadata",
+			"type":{
+				"type":"map",
+				"values":"string"
+			}
+		},
+		{
+			"name":"payload",
+			"type":"bytes"
+		}
+	]
+}
