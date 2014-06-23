@@ -22,9 +22,9 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git@github.com/dice-cyfronet/ismop-flume-event.git</connection>
-		<developerConnection>scm:git:git@github.com/dice-cyfronet/ismop-flume-event.git</developerConnection>
-		<url>scm:git:git@github.com/dice-cyfronet/ismop-flume-event.git</url>
+		<connection>scm:git:https://github.com/dice-cyfronet/ismop-flume-event.git</connection>
+		<developerConnection>scm:git:https://github.com/dice-cyfronet/ismop-flume-event.git</developerConnection>
+		<url>scm:git:https://github.com/dice-cyfronet/ismop-flume-event.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
