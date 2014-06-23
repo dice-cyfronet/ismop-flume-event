@@ -4,7 +4,7 @@
 
 	<groupId>pl.cyfronet.ismop</groupId>
 	<artifactId>ismop-flume-event</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
