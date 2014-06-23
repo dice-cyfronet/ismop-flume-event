@@ -62,14 +62,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-				</configuration>
-			</plugin>
 		</plugins>
 
 		<pluginManagement>
@@ -109,14 +101,6 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ssh</artifactId>
-				<version>2.6</version>
-			</extension>
-		</extensions>
 
 	</build>
 
