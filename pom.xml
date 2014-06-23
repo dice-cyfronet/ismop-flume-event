@@ -6,6 +6,13 @@
 	<artifactId>ismop-flume-event</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 
+	<parent>
+		<groupId>pl.cyfronet.dice</groupId>
+		<artifactId>dice</artifactId>
+		<version>1</version>
+	</parent>
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.avro</groupId>
